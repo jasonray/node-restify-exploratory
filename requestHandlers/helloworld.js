@@ -13,6 +13,7 @@ function sayHello(request, response, next) {
 
 	if (negotiatedMediaType == 'text/text' || negotiatedMediaType == 'text/plain') {
 		response.send('hello world');
+		console.log('return hello world text/text');
 	} else if (negotiatedMediaType == 'application/json') {
 		responseMessage = {
 			message: 'hello world',

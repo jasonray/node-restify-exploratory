@@ -12,9 +12,9 @@ function pause(request, response, next) {
 	setTimeout(function() {
 		console.log("pause complete");
 		response.end();
+		next();
 	}, duration);
 
-	next();
 }
 
 exports.pause = pause;
