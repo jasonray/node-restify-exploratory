@@ -10,7 +10,7 @@ function pause(request, response, next) {
 	}
 
 	setTimeout(function() {
-		console.log("pause timer fired");
+		console.log("pause complete");
 		response.end();
 	}, duration);
 
