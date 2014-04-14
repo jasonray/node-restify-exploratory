@@ -5,10 +5,10 @@ function sayHello(response, request) {
 
 	var availableMediaTypes = ['text/text', 'text/plain', 'application/json', 'application/xml', 'text/html'];
 	var negotiator = new Negotiator(request);
-	console.log("request Accept mediatypes: " + negotiator.mediaTypes());
-	console.log("potential negotiated mediatypes: " + negotiator.mediaTypes(availableMediaTypes));
+	// console.log("request Accept mediatypes: " + negotiator.mediaTypes());
+	// console.log("potential negotiated mediatypes: " + negotiator.mediaTypes(availableMediaTypes));
 	var negotiatedMediaType = negotiator.mediaType(availableMediaTypes);
-	console.log("negotiated mediatype: " + negotiator.mediaType(availableMediaTypes));
+	// console.log("negotiated mediatype: " + negotiator.mediaType(availableMediaTypes));
 
 	if (negotiatedMediaType == 'text/text' || negotiatedMediaType == 'text/plain') {
 		response.writeHead(200, {
