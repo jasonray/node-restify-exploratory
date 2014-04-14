@@ -11,8 +11,8 @@ function echo(req, res, next) {
 }
 
 function add(req, res, next) {
-	var x = parseInt(req.query.x);
-	var y = parseInt(req.query.y);
+	var x = parseInt(req.query.x, 10);
+	var y = parseInt(req.query.y, 10);
 	var sum = x + y;
 	console.log('%s + %s = %s',x ,y, sum);
 	res.send(sum.toString());
@@ -20,8 +20,8 @@ function add(req, res, next) {
 }
 
 function subtract(req, res, next) {
-	var x = parseInt(req.query.x);
-	var y = parseInt(req.query.y);
+	var x = parseInt(req.query.x, 10);
+	var y = parseInt(req.query.y, 10);
 	var diff = x - y;
 	console.log('%s - %s = %s',x ,y, diff);
 	res.send(diff.toString());
