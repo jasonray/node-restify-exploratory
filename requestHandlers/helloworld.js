@@ -1,14 +1,11 @@
-var Negotiator = require('negotiator')
+var Negotiator = require('negotiator');
 
 function sayHello(response, request) {
 	console.log("Request handler 'hello' was called.");
 
 	var availableMediaTypes = ['text/text', 'text/plain', 'application/json', 'application/xml', 'text/html'];
 	var negotiator = new Negotiator(request);
-	// console.log("request Accept mediatypes: " + negotiator.mediaTypes());
-	// console.log("potential negotiated mediatypes: " + negotiator.mediaTypes(availableMediaTypes));
 	var negotiatedMediaType = negotiator.mediaType(availableMediaTypes);
-	// console.log("negotiated mediatype: " + negotiator.mediaType(availableMediaTypes));
 
 	if (negotiatedMediaType == 'text/text' || negotiatedMediaType == 'text/plain') {
 		response.writeHead(200, {
