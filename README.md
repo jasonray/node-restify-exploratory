@@ -51,7 +51,7 @@ Connection: keep-alive
 "hello world"
 ```
 
-The `hello` service implements content negotiation, and returns different format based upon the negotatied format.
+The `hello` service implements content-negotiation, and returns different format based upon the negotatied format.
 
 ```
 jayray> curl -i -H 'Accept: application/json' http://127.0.0.1:8888/hello?q=q
@@ -62,6 +62,12 @@ Date: Tue, 15 Apr 2014 11:57:03 GMT
 Connection: keep-alive
 
 {"message":"hello world","h2":"default","q":"q"}
+```
+
+To see the implementation of content-negotiation, look in `helloworld.js` for:
+```
+var negotiator = new Negotiator(request);
+var negotiatedMediaType = negotiator.mediaType(availableMediaTypes);
 ```
 
 Pause
