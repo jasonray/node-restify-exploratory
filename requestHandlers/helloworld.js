@@ -1,7 +1,9 @@
 var Negotiator = require('negotiator');
 
 function sayHello(request, response, next) {
-	var logger = require('bunyan').createLogger({name: "helloService"});
+	var logger = require('bunyan').createLogger({
+		name: "helloService"
+	});
 
 	logger.info("Request handler 'hello' was called.");
 
