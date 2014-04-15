@@ -1,7 +1,9 @@
 var Negotiator = require('negotiator');
 
 function sayHello(request, response, next) {
-	console.log("Request handler 'hello' was called.");
+	var logger = require('bunyan').createLogger({name: "helloService"});
+
+	logger.info("Request handler 'hello' was called.");
 
 	var availableMediaTypes = ['text/text', 'text/plain', 'application/json', 'application/xml', 'text/html'];
 	var negotiator = new Negotiator(request);
@@ -13,7 +15,7 @@ function sayHello(request, response, next) {
 
 	if (negotiatedMediaType == 'text/text' || negotiatedMediaType == 'text/plain') {
 		response.send('hello world');
-		console.log('return hello world text/text');
+		logger.info('return hello world text/text');
 	} else if (negotiatedMediaType == 'application/json') {
 		responseMessage = {
 			message: 'hello world',
