@@ -3,11 +3,15 @@ var restify = require('restify');
 var server = restify.createServer();
 server.use(restify.queryParser());
 
-server.use(restify.requestLogger({'k':'v'}));
+server.use(restify.requestLogger({
+	'k': 'v'
+}));
 
 var activeCalls = 0;
 server.use(function(req, res, next) {
-	var logger = require('bunyan').createLogger({name: "activeCallsFilter"});
+	var logger = require('bunyan').createLogger({
+		name: "activeCallsFilter"
+	});
 
 	activeCalls++;
 	logger.info('active calls (pre): ' + activeCalls);
@@ -23,14 +27,18 @@ server.get('/math/add', require("./requestHandlers/math").add);
 server.get('/math/subtract', require("./requestHandlers/math").subtract);
 
 server.use(function handler2(req, res, next) {
-	var logger = require('bunyan').createLogger({name: "handler2"});
+	var logger = require('bunyan').createLogger({
+		name: "handler2"
+	});
 
 	logger.info('handler2');
 	next();
 });
 
 server.listen(8888, function() {
-	var logger = require('bunyan').createLogger({name: "server"});
+	var logger = require('bunyan').createLogger({
+		name: "server"
+	});
 
 	logger.info('%s listening at %s', server.name, server.url);
 });
