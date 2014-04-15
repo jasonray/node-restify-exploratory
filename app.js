@@ -17,7 +17,7 @@ server.use(function(req, res, next) {
 	logger.info('active calls (pre): ' + activeCalls);
 	next();
 	activeCalls--;
-	logger.info('active calls: (post)' + activeCalls);
+	logger.info('active calls: (post): ' + activeCalls);
 });
 
 server.get('/hello', require("./requestHandlers/helloworld").sayHello);
