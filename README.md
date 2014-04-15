@@ -1,3 +1,12 @@
+Purpose
+=======
+This project is simply to experiment with building a web service using node.js.  Don't look to get any value by viewing this.  None.
+
+The project uses:
+- `restify` for handling the http listener and routing
+- `bunyan` for logging
+
+
 Install
 =======
 Install node:
@@ -25,6 +34,9 @@ This application formats logging using `bunyan` with json formatted output.  To 
 node app.js | node_modules/.bin/bunyan
 ```
 
+Hello
+-----
+Hello 
 
 Pause
 -----
