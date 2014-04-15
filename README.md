@@ -4,6 +4,7 @@ This project is simply to experiment with building a web service using node.js. 
 
 The project uses:
 - `restify` for handling the http listener and routing
+- `negotiator` for content negotiation
 - `bunyan` for logging
 
 
@@ -36,7 +37,32 @@ node app.js | node_modules/.bin/bunyan
 
 Hello
 -----
-Hello 
+The `hello` service returns a simple hello world phrase.
+
+A simple usage of it would be:
+```
+> curl -i http://127.0.0.1:8888/hello?q=q
+HTTP/1.1 200 OK
+Content-Type: application/json
+Content-Length: 13
+Date: Tue, 15 Apr 2014 11:52:09 GMT
+Connection: keep-alive
+
+"hello world"
+```
+
+The `hello` service implements content negotiation, and returns different format based upon the negotatied format.
+
+```
+jayray> curl -i -H 'Accept: application/json' http://127.0.0.1:8888/hello?q=q
+HTTP/1.1 200 OK
+Content-Type: application/json
+Content-Length: 48
+Date: Tue, 15 Apr 2014 11:57:03 GMT
+Connection: keep-alive
+
+{"message":"hello world","h2":"default","q":"q"}
+```
 
 Pause
 -----
