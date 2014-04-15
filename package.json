@@ -1,6 +1,6 @@
 {
-  "dependencies": {
-    "restify": "*",
-    "bunyan": "*"
-  }
+	"dependencies": {
+		"restify": "*",
+		"bunyan": "*"
+	}
 }
