@@ -1,6 +1,24 @@
 {
-	"dependencies": {
-		"restify": "*",
-		"bunyan": "*"
-	}
+  "name": "node-restify-exploratory",
+  "version": "0.0.0",
+  "description": "Exploratory with node.js and restify",
+  "main": "app.js",
+  "dependencies": {
+    "negotiator": "~0.4.2",
+    "restify": "~2.7.0",
+    "bunyan": "~0.22.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jasonray/node-restify-exploratory.git"
+  },
+  "author": "jason ray",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/jasonray/node-restify-exploratory/issues"
+  }
 }
