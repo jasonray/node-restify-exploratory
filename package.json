@@ -9,15 +9,11 @@
     "bunyan": "~0.22.3"
   },
   "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "author": "jason ray",
   "repository": {
     "type": "git",
     "url": "git://github.com/jasonray/node-restify-exploratory.git"
   },
-  "author": "jason ray",
-  "license": "BSD",
   "bugs": {
     "url": "https://github.com/jasonray/node-restify-exploratory/issues"
   }
